@@ -1,6 +1,8 @@
 package com.bird;
 
 import java.io.IOException;
+import java.util.Random;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -26,7 +28,10 @@ public class Index extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String serverName = request.getServerName();
-		response.getWriter().append("Served at: ").append(serverName);
+	    Random ran = new Random();
+	    int num = ran.nextInt(100);
+	    String n = String.valueOf(num);
+		response.getWriter().append("Served at: ").append(serverName).append("\n").append(n);
 	}
 
 	/**
